@@ -1,4 +1,4 @@
-Restart Typescript server:
+**Restart Typescript server:
 
 Ctrl + Shift + P -> Typescript: Restart TS server
 
