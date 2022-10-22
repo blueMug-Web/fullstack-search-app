@@ -1,0 +1,44 @@
+Restart Typescript server:
+
+Ctrl + Shift + P -> Typescript: Restart TS server
+
+---------------------------------
+
+ERROR:
+stdin is not a tty
+error: failed to push some refs to 'github.com:xxx/yyy.git'
+
+SOLVED BY:
+git lfs update --force
+
+
+---------------------------------
+
+yarn add -D cross-env
+
+SOLUTION: This allows you to set .env variables on PC, Mac, Linux, etc. (Cross-Platform Environment variables)
+
+then do this:
+
+For Debugging, in package.json, set the "dev" variables under 'scripts' to this:
+-> "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+
+---------------------------------
+
+Setting up STORYBOOK
+
+npx sb init --builder webpack5
+
+yarn add util (to resolve errors when running 'yarn storybook')
+
+---------------------------------
+
+If pulling images from an external URL, add this 'images' line to next.config.js:
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ['i.pravatar.cc'],
+  },
+};
