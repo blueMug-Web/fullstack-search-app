@@ -1,8 +1,10 @@
 import Head from 'next/head';
+import { ReactNode } from 'react';
 import Footer from '../../navigation/footer/Footer';
 import Header from '../../navigation/header/Header';
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {
+  children: ReactNode;
   justify?: 'items-center' | 'items-start';
 }
 
@@ -14,7 +16,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({
   return (
     <>
       <Head>
-        <title>NextJs Fullstack App Template</title>
+        <title>NextJS Fullstack Search App</title>
       </Head>
       <div {...divProps} className={`min-h-screen flex flex-col ${justify}`}>
         <Header />

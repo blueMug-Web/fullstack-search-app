@@ -1,9 +1,9 @@
 // @ts-check
-// import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import * as NextImage from 'next/image';
 import React from 'react';
+import { AuthProvider } from '../context/auth/AuthContext';
 import '../pages/globals.css';
-// import { AuthProvider } from '../state/auth/AuthContext';
 
 const BREAKPOINTS_INT = {
   xs: 375,
@@ -37,13 +37,13 @@ Object.defineProperty(NextImage, 'default', {
   value: (props) => <OriginalNextImage {...props} unoptimized />,
 });
 
-// export const decorators = [
-//   (Story) => (
-//     <AuthProvider>
-//       <Story />
-//     </AuthProvider>
-//   ),
-// ];
+export const decorators = [
+  (Story) => (
+    <AuthProvider>
+      <Story />
+    </AuthProvider>
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -54,8 +54,8 @@ export const parameters = {
     },
   },
   viewport: { viewports: customViewports },
-  // layout: 'fullscreen',
-  // nextRouter: {
-  //   Provider: RouterContext.Provider,
-  // },
+  layout: 'fullscreen',
+  nextRouter: {
+    Provider: RouterContext.Provider,
+  },
 };

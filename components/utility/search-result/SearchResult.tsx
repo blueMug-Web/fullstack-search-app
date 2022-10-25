@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { ISearchData } from '../../../lib/search/types';
 
+//Anything prefixed with I, (ie. ISearchData), is an interface
+//https://www.typescriptlang.org/docs/handbook/interfaces.html
+
+//Search result component is a union between the type of
+//search result data it receives as props, and any components props you can put on an HTML div
 export type ISearchResult = ISearchData & React.ComponentPropsWithoutRef<'div'>;
 
 const SearchResult: React.FC<ISearchResult> = ({
