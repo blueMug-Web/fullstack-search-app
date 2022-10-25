@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* // This is a reusable class for all buttons, instead of 
+copy/pasting the long classname into every button component - example in Components/Utility/search/Search.tsx*/
 @layer components {
   .btn-primary {
     @apply border-0 p-2 px-6 bg-slate-100 rounded-md;
